@@ -1,0 +1,24 @@
+:root{
+  scroll-behavior: smooth;
+  --primary: #4154f1;
+  --second: #717ff5;
+  --bgColor: #f6f9ff;
+}
+
+body{
+  color:black;
+  background: var(--bgColor);
+}
+
+a{
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover{
+  color:var(--second);
+  text-decoration: none;
+}
+
+
