@@ -1,7 +1,7 @@
 import React from 'react'
-import './logo.css'
+import '../styles/logo.css'
 
-const Logo = () => {
+function Logo () {
     const handleToggleSideBar = () => {
         document.body.classList.toggle('toggle-sidebar');
     }
