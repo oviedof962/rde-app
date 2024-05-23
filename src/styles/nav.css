@@ -69,6 +69,7 @@
     background-color: #f6f9ff;
 }
 
+/*mensajes */
 .header-nav .messages{
     inset: 8px -15px auto auto !important;
 }
@@ -104,6 +105,7 @@
     background-color: #f6f9ff;
 }
 
+/*perfil*/
 .header-nav .profile{
     min-width: 240px;
     padding-bottom: 0;
