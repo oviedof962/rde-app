@@ -11,6 +11,8 @@ function Logo () {
             {/*<img src="" alt=""/> */}
             <span className='d-none d-lg-block'>admin</span>
         </a>
+
+        {/*hamburgueza para abrir o cerrar el sidebar */}
         <i className='bi bi-list toggle-sidebar-btn'
         onClick={handleToggleSideBar}
         ></i>

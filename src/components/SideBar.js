@@ -40,17 +40,12 @@ function Sidebar() {
                     </li>
                 </ul>
             </li>
+
             <li className='nav-item'>
-
-            <a className='nav-link collapsed'
-                data-bs-target='#components-nav'
-                data-bs-toggle="collapse"
-                href='#'>
-                    <i className='bi bi-journal-text'></i>
-                    <span>Dacumentos</span>
-                    <i className='bi bi-chevron-down ms-auto'></i>
+                <a className='nav-link' href='#'>
+                    <i className='bi bi-grid'></i>
+                    <span>Documentos</span>
                 </a>
-
             </li>
             
         </ul>
