@@ -1,5 +1,9 @@
 import React from 'react'
 import '../styles/sideBar.css'
+import navList from '../data/navItem'
+import NavItem from './NavItem'
+
+
 
 function Sidebar() {
     
@@ -19,7 +23,7 @@ function Sidebar() {
                 data-bs-toggle="collapse"
                 href='#'>
                     <i className='bi bi-menu-button-wide'></i>
-                    <span>Dacumentos</span>
+                    <span>Documentos</span>
                     <i className='bi bi-chevron-down ms-auto'></i>
                 </a>
                 <ul
@@ -38,6 +42,8 @@ function Sidebar() {
                             <span>ejemplo</span>
                         </a>
                     </li>
+
+                   
                 </ul>
             </li>
 
@@ -47,7 +53,10 @@ function Sidebar() {
                     <span>Documentos</span>
                 </a>
             </li>
-            
+            <li className='nav-heading'>Pages</li>
+                    {navList.map(nav =>(
+                        <NavItem key={nav._id} nav={nav} />
+                    ))}
         </ul>
     </aside>
   )
