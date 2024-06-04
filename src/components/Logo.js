@@ -9,7 +9,7 @@ function Logo () {
     <div className='d-flex align-items-center justify-content-between'>
         <a href='/' className='logo d-flex aling-items-center'>
             {/*<img src="" alt=""/> */}
-            <span className='d-none d-lg-block'>admin</span>
+            <span className='d-none d-lg-block'>RDE</span>
         </a>
 
         {/*hamburgueza para abrir o cerrar el sidebar */}

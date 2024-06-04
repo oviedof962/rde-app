@@ -16,7 +16,7 @@ function NavAvatar() {
       <ul className='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile'>
         <li className='dropdown-header'>
           <h6>Scarleth</h6>
-          <span>Web devloper</span>
+          <span>Analista</span>
         </li>
         <li>
           <hr className='dropdown-divider'></hr>
@@ -27,7 +27,7 @@ function NavAvatar() {
           href='users-profile.html'
           >
             <i className='bi bi-person'></i>
-            <span>My perfil</span>
+            <span>Mi perfil</span>
           </a>
         </li>
 
@@ -41,7 +41,7 @@ function NavAvatar() {
           href='users-profile.html'
           >
             <i className='bi bi-gear'></i>
-            <span>Account Setting</span>
+            <span>Configuraciones</span>
           </a>
         </li> 
 

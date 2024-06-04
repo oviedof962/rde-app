@@ -1,11 +1,8 @@
 import React from 'react'
 
-
-const Estadistica = () => {
+function Estadistica() {
   return (
-    <div className='est'>
-        Estadisticasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-    </div>
+    <div>Estadistica</div>
   )
 }
 

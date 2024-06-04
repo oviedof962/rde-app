@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/sideBar.css';
-import navList from '../data/navItem';
-import NavItem from './NavItem';
+
 
 function Sidebar() {
   const [menu, setMenu] = useState('menu1');
