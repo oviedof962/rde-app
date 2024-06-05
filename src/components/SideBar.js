@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/sideBar.css';
-
 
 function Sidebar() {
   const [menu, setMenu] = useState('menu1');
@@ -12,14 +12,16 @@ function Sidebar() {
 
   const items = menu === 'menu1'
     ? [
-        { name: 'Estadistica', path: '/Estadistica' },
-        { name: 'Item 2', path: '/item2' },
-        { name: 'Item 3', path: '/item3' }
+        { name: 'Home', path: '/Home', icon: 'bi bi-house' },
+        { name: 'Operaciones', path: '/Operaciones', icon: 'bi bi-gear' },
+        { name: 'Estadistica', path: '/Estadistica', icon: 'bi bi-bar-chart' },
+        { name: 'Usuarios', path: '/Usuarios', icon: 'bi bi-people' },
+        { name: 'Configuracion', path: '/Configuracion', icon: 'bi bi-wrench' }
       ]
     : [
-        { name: 'Item A', path: '/itemA' },
-        { name: 'Item B', path: '/itemB' },
-        { name: 'Item C', path: '/itemC' }
+        { name: 'Item A', path: '/itemA', icon: 'bi bi-apple' },
+        { name: 'Item B', path: '/itemB', icon: 'bi bi-cup-straw' },
+        { name: 'Item C', path: '/itemC', icon: 'bi bi-car-front' }
       ];
 
   return (
@@ -32,16 +34,11 @@ function Sidebar() {
       </div>
       
       <ul className="sidebar-nav" id="sidebar-nav">
-      
-
         <li className="nav-heading">Páginas</li>
-        
-        
-
         {items.map((item) => (
           <li key={item.path} className="nav-item">
             <Link to={item.path} className="nav-link">
-              
+              <i className={item.icon}></i>
               <span>{item.name}</span>
             </Link>
           </li>

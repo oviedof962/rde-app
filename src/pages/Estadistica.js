@@ -1,8 +1,14 @@
 import React from 'react'
-
+import "../styles/estadisticas.css"
 function Estadistica() {
   return (
-    <div>Estadistica</div>
+    <div id='main'>Estadistica
+    
+    
+    Estadistica
+    Estadistica
+    vEstadistica
+    Estadistica</div>
   )
 }
 

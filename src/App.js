@@ -7,7 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import Estadistica from './pages/Estadistica';
+
 
 
 import './App.css';
@@ -21,6 +23,7 @@ function App() {
       <SideBar />
       <div className="content">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Estadistica" element={<Estadistica />} />
         </Routes>
       </div>
