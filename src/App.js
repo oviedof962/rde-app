@@ -13,8 +13,8 @@ import Estadistica from './pages/Estadistica';
 
 
 import './App.css';
-import Header from './components/Header';
-import SideBar from './components/SideBar';
+import Header from './static/Header';
+import SideBar from './static/SideBar';
 
 function App() {
   return (<>
@@ -23,7 +23,7 @@ function App() {
       <SideBar />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/Estadistica" element={<Estadistica />} />
         </Routes>
       </div>

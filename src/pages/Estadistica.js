@@ -1,5 +1,6 @@
 import React from 'react'
-import "../styles/estadisticas.css"
+import "../styles/main.css"
+
 function Estadistica() {
   return (
     <div id='main'>Estadistica
