@@ -9,6 +9,9 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Estadistica from './pages/Estadistica';
+import Configuracion from './pages/Configuracion';
+import Usuario from './pages/Usuario'
+import Operaciones from './pages/Operaciones';
 
 
 
@@ -25,6 +28,9 @@ function App() {
         <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/Estadistica" element={<Estadistica />} />
+          <Route path='/Configuracion' element={<Configuracion/>} />
+          <Route path='/Usuario' element={<Usuario/>} />
+          <Route path='/Operaciones' element={<Operaciones/>} />
         </Routes>
       </div>
     </div>

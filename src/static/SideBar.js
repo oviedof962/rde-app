@@ -15,7 +15,7 @@ function Sidebar() {
         { name: 'Home', path: '/Home', icon: 'bi bi-house' },
         { name: 'Operaciones', path: '/Operaciones', icon: 'bi bi-gear' },
         { name: 'Estadistica', path: '/Estadistica', icon: 'bi bi-bar-chart' },
-        { name: 'Usuarios', path: '/Usuarios', icon: 'bi bi-people' },
+        { name: 'Usuario', path: '/Usuario', icon: 'bi bi-people' },
         { name: 'Configuracion', path: '/Configuracion', icon: 'bi bi-wrench' }
       ]
     : [

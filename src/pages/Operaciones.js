@@ -1,8 +1,9 @@
 import React from 'react'
+import '../styles/main.css';
 
-const Operaciones = () => {
+function Operaciones() {
   return (
-    <div>Operaciones</div>
+    <div id='main'>Operaciones</div>
   )
 }
 

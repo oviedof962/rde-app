@@ -1,8 +1,9 @@
 import React from 'react'
+import '../styles/main.css';
 
-const Configuracion = () => {
+function Configuracion() {
   return (
-    <div>Configuracion</div>
+    <div id='main'>Configuracion</div>
   )
 }
 
