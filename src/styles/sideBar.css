@@ -14,7 +14,7 @@
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #21256e;
 }
 
 @media (max-width: 1199px) {
@@ -36,7 +36,7 @@
 @media (min-width: 1200px) {
   #main,
   #footer {
-    margin-left: 300px;
+    margin-left: 300px; /*para agrandar el margen del main a la izquierda*/
   }
 }
 

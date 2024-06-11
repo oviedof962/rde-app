@@ -9,13 +9,13 @@
 
 .header-nav .nav-icon{
     font-size: 22px;
-    color: #012970;
+    color: #ffffff;
     margin-right: 25px;
     position: relative;
 }
 
 .header-nav .nav-profile{
-    color: #012970;
+    color: #dcdddd;
 }
 
 .header-nav .nav-profile img{
@@ -27,83 +27,7 @@
     font-weight: 600;
 }
 
-/*el numero de notificaciones este encima de la campana*/
-.header-nav .badge-number{
-    position: absolute;
-    inset: -2px -5px auto auto;
-    font-weight: normal;
-    font-size: 12px;
-    padding: 3px 6px;
-}
 
-/*para que se vea mas pequeño el numero*/
-.header-nav .notifications{
-    inset: 8px -15px auto auto !important;
-}
-
-.header-nav .notifications .notification-item{
-    display: flex;
-    align-items: center;
-    padding: 15px 10px;
-    transition: 0.3s;
-}
-
-.header-nav .notifications .notification-item i{
-    margin: 0 20px 0 10px;
-    font-size: 24px;
-}
-
-.header-nav .notifications .notification-item h4{
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.header-nav .notifications .notification-item p{
-    font-size: 13px;
-    margin-bottom: 3px;
-    color: #919191;
-}
-
-.header-nav .notifications .notification-item:hover{
-    background-color: #f6f9ff;
-}
-
-/*mensajes */
-.header-nav .messages{
-    inset: 8px -15px auto auto !important;
-}
-
-.header-nav .messages .message-item{
-    padding: 15px 10px;
-    transition: 0.3s;
-}
-
-.header-nav .messages .message-item a{
-    display: flex;
-}
-
-.header-nav .messages .message-item img{
-    margin: 0 20px 0 10px;
-    max-height: 40px;
-}
-
-.header-nav .messages .message-item h4{
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #444444;
-}
-
-.header-nav .messages .message-item p{
-    font-size: 13px;
-    margin-bottom: 3px;
-    color: #919191;
-}
-
-.header-nav .messages .message-item:hover{
-    background-color: #f6f9ff;
-}
 
 /*perfil*/
 .header-nav .profile{
@@ -116,7 +40,7 @@
     font-size: 18px;
     margin-bottom: 0;
     font-weight: 600;
-    color: #444444;
+    color: #181717;
 }
 
 .header-nav .profile .dropdown-header span{

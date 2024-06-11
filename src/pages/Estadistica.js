@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderMinus, faUser, faUserFriends, faWarning } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import ProgressBar from '../components/ProgressBar'; // Import the ProgressBar component
+import Pie from '../components/Pie';
+import ProgressBar from '../components/ProgressBar';
+import Line from '../components/Line'; // Import the ProgressBar component
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -22,18 +24,6 @@ const data = {
   ],
 };
 
-const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: true,
-      text: 'Actividades',
-    },
-  },
-};
 
 function Estadistica() {
   return (
@@ -80,12 +70,15 @@ function Estadistica() {
         <div className='card-grafico'>
           <div className='card-header'>ACTIVIDADES</div>
           <div className='grafico1'>
-            <Bar data={data} options={options} />
+       
+            <Pie />
           </div>
         </div>
         <div className='card-grafico'>
           <div className='card-header'>PROCESOS</div>
-          <div className='grafico2'></div>
+          <div className='grafico2'>
+          <Line />
+          </div>
         </div>
       </div>
       <div className='seccion-graficos3'>

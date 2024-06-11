@@ -11,6 +11,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   margin-left: 3%;
+  
 }
 
 .icono {

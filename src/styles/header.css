@@ -3,7 +3,7 @@
     z-index: 997;
     height: 60px;
     box-shadow: opx 2px 20px rgba(1, 41, 112, 0.1);
-    background-color: #fff;
+    background-color: #21256e;
     padding-left: 20px;
 }
 
@@ -12,5 +12,5 @@
     font-size: 32px;
     padding-left: 10px;
     cursor:pointer;
-    color: #488bff;
+    color: #ffffff;
 }
