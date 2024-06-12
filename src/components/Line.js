@@ -3,9 +3,7 @@ import ReactEcharts from 'echarts-for-react';
 
 const Line = () => {
     const option = {
-        title: {
-          text: 'Stacked Line'
-        },
+    
         tooltip: {
           trigger: 'axis'
         },

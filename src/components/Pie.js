@@ -8,15 +8,23 @@ const Pie = () => {
         },
         legend: {
           top: '5%',
+       
           left: 'center'
+        },
+         toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
         },
         series: [
           {
             name: 'Access From',
             type: 'pie',
+            bottom: '40%',
             radius: ['40%', '70%'],
             avoidLabelOverlap: false,
             itemStyle: {
+ 
               borderRadius: 10,
               borderColor: '#fff',
               borderWidth: 2
