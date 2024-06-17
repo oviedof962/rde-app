@@ -8,6 +8,7 @@ const Line = () => {
           trigger: 'axis'
         },
         legend: {
+          top: '5%',
           data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
         },
         grid: {

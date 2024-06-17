@@ -20,7 +20,8 @@ const Pie = () => {
           {
             name: 'Access From',
             type: 'pie',
-            bottom: '40%',
+            bottom: '10%',
+            top: '30%',
             radius: ['40%', '70%'],
             avoidLabelOverlap: false,
             itemStyle: {

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/sideBar.css';
+import Logo from './Logo'
+
+import Nav from './Nav'
 
 function Sidebar() {
   const [menu, setMenu] = useState('menu1');
@@ -28,8 +31,8 @@ function Sidebar() {
     <aside id="sidebar" className="sidebar">
       <div className="menu-selector">
         <select id="menu-select" onChange={handleMenuChange} defaultValue="menu1">
-          <option value="menu1">Menú 1</option>
-          <option value="menu2">Menú 2</option>
+          <option value="menu1">Area Seca</option>
+          <option value="menu2">Area Humeda</option>
         </select>
       </div>
       
@@ -44,6 +47,10 @@ function Sidebar() {
           </li>
         ))}
       </ul>
+          {/*logo */}
+    <Logo/>   
+    {/*nav */}
+    <Nav/>
     </aside>
   );
 }

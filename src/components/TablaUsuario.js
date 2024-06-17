@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,58 +7,46 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import TextField from '@mui/material/TextField';
+
 const columns = [
   { id: 'name', label: 'Nombre', minWidth: 170 },
-  { id: 'code', label: 'Apellido', minWidth: 100 },
-  {
-    id: 'population',
-    label: 'Correo',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'size',
-    label: 'Contraseña',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: '',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
+  { id: 'surname', label: 'Apellido', minWidth: 100 },
+  { id: 'email', label: 'Correo', minWidth: 170, align: 'right' },
+  { id: 'password', label: 'Contraseña', minWidth: 170, align: 'right' }
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(name, surname, email, password) {
+  return { name, surname, email, password };
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('John', 'Doe', 'john.doe@example.com', 'password123'),
+  createData('Jane', 'Smith', 'jane.smith@example.com', 'password456'),
+  createData('Alice', 'Johnson', 'alice.johnson@example.com', 'password789'),
+  createData('Michael', 'Brown', 'michael.brown@example.com', 'password101'),
+  createData('Emily', 'Davis', 'emily.davis@example.com', 'password202'),
+  createData('Daniel', 'Miller', 'daniel.miller@example.com', 'password303'),
+  createData('Sophia', 'Wilson', 'sophia.wilson@example.com', 'password404'),
+  createData('James', 'Taylor', 'james.taylor@example.com', 'password505'),
+  createData('Olivia', 'Anderson', 'olivia.anderson@example.com', 'password606'),
+  createData('William', 'Thomas', 'william.thomas@example.com', 'password707'),
+  createData('Ava', 'Jackson', 'ava.jackson@example.com', 'password808'),
+  createData('Christopher', 'White', 'christopher.white@example.com', 'password909'),
+  createData('Isabella', 'Harris', 'isabella.harris@example.com', 'password1010'),
+  createData('Benjamin', 'Martin', 'benjamin.martin@example.com', 'password1111'),
+  createData('Charlotte', 'Garcia', 'charlotte.garcia@example.com', 'password1212'),
+  createData('Lucas', 'Martinez', 'lucas.martinez@example.com', 'password1313'),
+  createData('Amelia', 'Robinson', 'amelia.robinson@example.com', 'password1414'),
+  createData('Mason', 'Clark', 'mason.clark@example.com', 'password1515'),
+  createData('Mia', 'Rodriguez', 'mia.rodriguez@example.com', 'password1616'),
 ];
+
 
 export default function StickyHeadTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -69,9 +57,27 @@ export default function StickyHeadTable() {
     setPage(0);
   };
 
-  return (
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
+  const filteredRows = rows.filter((row) =>
+    row.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    row.surname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    row.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    row.password.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <TextField
+        label="Buscar"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -88,18 +94,16 @@ export default function StickyHeadTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows
+            {filteredRows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.email}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
+                          {value}
                         </TableCell>
                       );
                     })}
@@ -112,13 +116,12 @@ export default function StickyHeadTable() {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={rows.length}
+        count={filteredRows.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </Paper>
-
   );
 }
