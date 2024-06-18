@@ -1,18 +1,31 @@
+/*Estilos cartas*/
+
 .interior-card1 .texto1,
 .interior-card2 .texto1 {
   white-space: nowrap;    /* Evita que el texto se envuelva a una nueva línea */
   overflow: hidden;       /* Oculta el texto que desborda el contenedor */
   text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto si es demasiado largo */
 }
-
-
 .seccion-card {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-left: 3%;
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+/* Estilos para las tarjetas individuales */
+.card {
+  flex: 1 2 20%; /* 4 tarjetas por fila con un poco de espacio entre ellas */
+  margin: 5px;
+  min-width: 300px; /* Ancho mínimo para que las tarjetas no se vuelvan demasiado pequeñas */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 6rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 
 .icono {
   font-size: 2rem;
@@ -26,6 +39,7 @@
   text-align: left;
 }
 
+
 .interior-card1 .texto1 {
   font-size: 13px;
 }
@@ -38,99 +52,79 @@ p {
   margin-bottom: 10px;
 }
 
-.card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  height: 6rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .seccion-card {
+    flex-direction: column; /* Apilar las tarjetas verticalmente */
+    align-items: center; /* Centrar las tarjetas */
+  }
+  .card {
+    flex: 1 1 100%; /* Cada tarjeta ocupa todo el ancho disponible */
+    max-width: 500px; /* Limitar el ancho máximo para legibilidad */
+  }
 }
 
+
+
+/*Graficos 1 y 2----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .seccion-graficos {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* 1 fracción para grafico1, 2 fracciones para grafico2 */
-  gap: 43px;
-  margin-top: 4rem;
-  margin-left: 3%;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 fracción para grafico1, 2 fracciones para grafico2 */
+    gap: 43px;
+    margin-top: 4rem;
 }
 
-.seccion-graficos2 {
-  margin-top: 4rem;
-  margin-left: 3%;
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    .seccion-graficos {
+        grid-template-columns: 1fr; /* Una columna para pantallas medianas */
+    }
 }
 
-.seccion-graficos3 {
-  margin-top: 4rem;
-  margin-left: 3%;
+@media (max-width: 768px) {
+    .seccion-graficos {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+
+    .grafico1, .grafico2 {
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+
+    .card-grafico {
+        margin-bottom: 20px; /* Añade espacio entre las tarjetas */
+    }
 }
 
 .card-grafico {
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 6px;
-  overflow: hidden; /* Evita que los bordes internos sobresalgan */
-}
-
-.card-grafico2 {
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 6px;
-  overflow: hidden; /* Evita que los bordes internos sobresalgan */
-}
-
-.card-grafico3 {
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 6px;
-  overflow: hidden; /* Evita que los bordes internos sobresalgan */
-}
-
-.card-header {
-  padding: 10px;
-  font-size: 13px;
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #ddd;
-  text-align: start;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    overflow: hidden; /* Evita que los bordes internos sobresalgan */
+    display: flex;
+    flex-direction: column;
 }
 
 .grafico1, .grafico2 {
-  width: 100%; /* Asegura que el gráfico ocupe todo el espacio disponible */
-  height: 23rem; /* Puedes ajustar esto según lo necesites */
-  
-}
-.grafico1{
-  padding-inline: 1rem;
-  padding-top: 1rem;
-}
-.grafico3-int{
-  font-size: 13px;
-  margin-inline: 1rem;
-  margin-top: 1rem;
-}
-.progress-bar-container {
-  margin-bottom: 10px; /* Adjust the margin bottom as needed */
+    width: 100%; /* Asegura que el gráfico ocupe todo el espacio disponible */
+    height: 23rem; /* Puedes ajustar esto según lo necesites */
 }
 
-.progress-bar {
-  width: 100%;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progress {
-  background-color: #007bff; /* Change the color of the progress bar */
-  height: 20px;
-}
-
-.grafico3 {
-  width: 100%; /* Asegura que el gráfico ocupe todo el espacio disponible */
-  height: 18rem; /* Puedes ajustar esto según lo necesites */
+.grafico1 {
+    padding-inline: 1rem;
+    padding-top: 1rem;
 }
 
 .grafico2 {
-  height: 10rem; /* Asegura que el gráfico 2 sea más grande */
+    height: 23rem; /* Asegura que el gráfico 2 sea más pequeño en pantallas grandes */
 }
 
-
+.card-header {
+    padding: 10px;
+    font-size: 13px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    text-align: start;
+    flex-shrink: 0; /* Evita que el encabezado se encoja */
+}

@@ -23,11 +23,11 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
 const columns = [
-  { id: 'name', label: 'Nombre', minWidth: 170 },
-  { id: 'surname', label: 'Apellido', minWidth: 100 },
-  { id: 'email', label: 'Correo', minWidth: 170, align: 'right' },
-  { id: 'password', label: 'Contraseña', minWidth: 170, align: 'right' },
-  { id: 'role', label: 'Rol', minWidth: 170, align: 'right' }
+  { id: 'name', label: 'Equipo', minWidth: 170 },
+  { id: 'surname', label: 'Subsistema', minWidth: 100 },
+  { id: 'email', label: 'Componente', minWidth: 170, align: 'right' },
+  { id: 'password', label: 'Tipo de causa', minWidth: 170, align: 'right' },
+  { id: 'role', label: 'comentario', minWidth: 170, align: 'right' }
 ];
 
 function createData(name, surname, email, password, role) {
@@ -37,6 +37,14 @@ function createData(name, surname, email, password, role) {
 const initialRows = [
   createData('John', 'Doe', 'john.doe@example.com', 'password123', 'Admin'),
   createData('Jane', 'Smith', 'jane.smith@example.com', 'password456', 'User'),
+  createData('Emily', 'Johnson', 'emily.johnson@example.com', 'password789', 'User'),
+  createData('Michael', 'Brown', 'michael.brown@example.com', 'password101', 'Moderator'),
+  createData('Sarah', 'Davis', 'sarah.davis@example.com', 'password202', 'User'),
+  createData('David', 'Wilson', 'david.wilson@example.com', 'password303', 'Admin'),
+  createData('Laura', 'Taylor', 'laura.taylor@example.com', 'password404', 'User'),
+  createData('James', 'Anderson', 'james.anderson@example.com', 'password505', 'Moderator'),
+  createData('Olivia', 'Thomas', 'olivia.thomas@example.com', 'password606', 'User'),
+  createData('Daniel', 'Jackson', 'daniel.jackson@example.com', 'password707', 'User')
   // more initial data...
 ];
 
@@ -194,22 +202,37 @@ export default function StickyHeadTable() {
                 <MenuItem value="User">Equipo2</MenuItem>
               </Select>
             </FormControl>
-              <TextField
-                fullWidth
-                margin="normal"
+
+            <FormControl fullWidth margin="normal">
+              <InputLabel id="role-label">Subsistema</InputLabel>
+              <Select
+                labelId="role-label"
+                id="role-select"
+                value={newUser.value}
+                name="Subsistema"
+                onChange={handleInputChange}
                 label="Subsistema"
-                name="surname"
-                value={newUser.surname}
+              >
+                <MenuItem value="Admin">Equipo1</MenuItem>
+                <MenuItem value="User">Equipo2</MenuItem>
+              </Select>
+            </FormControl>
+
+            <FormControl fullWidth margin="normal">
+              <InputLabel id="role-label">Componente</InputLabel>
+              <Select
+                labelId="role-label"
+                id="role-select"
+                value={newUser.value}
+                name="Componente"
                 onChange={handleInputChange}
-              />
-              <TextField
-                fullWidth
-                margin="normal"
                 label="Componente"
-                name="email"
-                value={newUser.email}
-                onChange={handleInputChange}
-              />
+              >
+                <MenuItem value="Admin">Equipo1</MenuItem>
+                <MenuItem value="User">Equipo2</MenuItem>
+              </Select>
+            </FormControl>
+
               <FormControl component="fieldset" margin="normal">
                 <FormLabel component="legend">Tipo de Causa</FormLabel>
                 <RadioGroup
@@ -239,7 +262,7 @@ export default function StickyHeadTable() {
               />
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1, mt: 40 }}>
                 <Button variant="contained" color="primary" onClick={handleAddUser}>
-                  Agregar
+                  Guardar
                 </Button>
                 <Button variant="outlined" color="secondary" onClick={handleCloseModal}>
                   Cancelar

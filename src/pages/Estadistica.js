@@ -28,7 +28,7 @@ const data = {
 function Estadistica() {
   return (
     <div id='main'>
-      <div className='seccion-card'>
+       <div className='seccion-card'>
         <div className='card'>
           <div className='interior-card1'>
             <p className='texto1'>USUARIOS</p>
@@ -66,6 +66,7 @@ function Estadistica() {
           </div>
         </div>
       </div>
+
       <div className='seccion-graficos'>
         <div className='card-grafico'>
           <div className='card-header'>ACTIVIDADES</div>
@@ -81,6 +82,12 @@ function Estadistica() {
           </div>
         </div>
       </div>
+
+
+
+       {/** 
+     
+    
       <div className='seccion-graficos3'>
         <div className='card-grafico3'>
           <div className='card-header'>SISTEMAS</div>
@@ -99,8 +106,9 @@ function Estadistica() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
+    
   );
 }
 
