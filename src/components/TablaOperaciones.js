@@ -21,13 +21,14 @@ import FormLabel from '@mui/material/FormLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
+import Swal from 'sweetalert2'; // Importa SweetAlert2
 
 const columns = [
   { id: 'name', label: 'Equipo', minWidth: 170 },
   { id: 'surname', label: 'Subsistema', minWidth: 100 },
   { id: 'email', label: 'Componente', minWidth: 170, align: 'right' },
   { id: 'password', label: 'Tipo de causa', minWidth: 170, align: 'right' },
-  { id: 'role', label: 'comentario', minWidth: 170, align: 'right' }
+  { id: 'role', label: 'Comentario', minWidth: 170, align: 'right' }
 ];
 
 function createData(name, surname, email, password, role) {
@@ -98,6 +99,12 @@ export default function StickyHeadTable() {
     setRows([...rows, createData(newUser.name, newUser.surname, newUser.email, newUser.password, newUser.role)]);
     setNewUser({ name: '', surname: '', email: '', password: '', role: 'User' });
     handleCloseModal();
+    Swal.fire({
+      title: 'Operacion añadida',
+      text: 'La nuevo operación ha sido añadido exitosamente.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   };
 
   const filteredRows = rows.filter((row) =>
@@ -118,7 +125,7 @@ export default function StickyHeadTable() {
           onChange={handleSearchChange}
         />
         <Button variant="contained" onClick={handleOpenModal}>
-        Nueva Operacion
+          Nueva Operacion
         </Button>
       </Box>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -188,50 +195,50 @@ export default function StickyHeadTable() {
           <Grid container spacing={2}>
             {/* Form section */}
             <Grid item xs={6}>
-            <FormControl fullWidth margin="normal">
-              <InputLabel id="role-label">Equipo</InputLabel>
-              <Select
-                labelId="role-label"
-                id="role-select"
-                value={newUser.value}
-                name="Equipo"
-                onChange={handleInputChange}
-                label="Equipo"
-              >
-                <MenuItem value="Admin">Equipo1</MenuItem>
-                <MenuItem value="User">Equipo2</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl fullWidth margin="normal">
+                <InputLabel id="role-label">Equipo</InputLabel>
+                <Select
+                  labelId="role-label"
+                  id="role-select"
+                  value={newUser.value}
+                  name="Equipo"
+                  onChange={handleInputChange}
+                  label="Equipo"
+                >
+                  <MenuItem value="Equipo1">Equipo1</MenuItem>
+                  <MenuItem value="Equipo2">Equipo2</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl fullWidth margin="normal">
-              <InputLabel id="role-label">Subsistema</InputLabel>
-              <Select
-                labelId="role-label"
-                id="role-select"
-                value={newUser.value}
-                name="Subsistema"
-                onChange={handleInputChange}
-                label="Subsistema"
-              >
-                <MenuItem value="Admin">Equipo1</MenuItem>
-                <MenuItem value="User">Equipo2</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl fullWidth margin="normal">
+                <InputLabel id="role-label">Subsistema</InputLabel>
+                <Select
+                  labelId="role-label"
+                  id="role-select"
+                  value={newUser.value}
+                  name="Subsistema"
+                  onChange={handleInputChange}
+                  label="Subsistema"
+                >
+                  <MenuItem value="Subsistema1">Subsistema1</MenuItem>
+                  <MenuItem value="Subsistema2">Subsistema2</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl fullWidth margin="normal">
-              <InputLabel id="role-label">Componente</InputLabel>
-              <Select
-                labelId="role-label"
-                id="role-select"
-                value={newUser.value}
-                name="Componente"
-                onChange={handleInputChange}
-                label="Componente"
-              >
-                <MenuItem value="Admin">Equipo1</MenuItem>
-                <MenuItem value="User">Equipo2</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl fullWidth margin="normal">
+                <InputLabel id="role-label">Componente</InputLabel>
+                <Select
+                  labelId="role-label"
+                  id="role-select"
+                  value={newUser.value}
+                  name="Componente"
+                  onChange={handleInputChange}
+                  label="Componente"
+                >
+                  <MenuItem value="Componente1">Componente1</MenuItem>
+                  <MenuItem value="Componente2">Componente2</MenuItem>
+                </Select>
+              </FormControl>
 
               <FormControl component="fieldset" margin="normal">
                 <FormLabel component="legend">Tipo de Causa</FormLabel>

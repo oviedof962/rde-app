@@ -14,7 +14,7 @@
 
 /* Estilos para las tarjetas individuales */
 .card {
-  flex: 1 2 20%; /* 4 tarjetas por fila con un poco de espacio entre ellas */
+  flex: 1 2 10%; /* 4 tarjetas por fila con un poco de espacio entre ellas */
   margin: 5px;
   min-width: 300px; /* Ancho mínimo para que las tarjetas no se vuelvan demasiado pequeñas */
 
